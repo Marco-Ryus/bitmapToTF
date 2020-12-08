@@ -38,8 +38,6 @@ public class RecognitionHelmet extends Recognition {
     public @NonNull float[] recognize() {
 //        Log.d(TAG,"运行到recognize");
         TensorImage inputImageBuffer = this.loadImage();
-
-        //以下代码运行有问题
         this.helmet.getTflite().run(inputImageBuffer.getBuffer(),
                 this.helmet.getOutputProbabilityBuffer().getBuffer().rewind());
         Log.d(TAG,"运行到recognize");
